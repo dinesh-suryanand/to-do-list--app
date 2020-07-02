@@ -7,11 +7,12 @@ const _ = require("lodash");
 const app = express();
 
 app.set("view engine", "ejs");
+mongoose.set('useFindAndModify', false);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {
+mongoose.connect("mongodb+srv://admin-Dinesh:test123@cluster0.mssj1.mongodb.net/todolistDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
